@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YardSale: tienda de cositas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav>
+      <img src="./icons/icon_menu.svg" alt="menu" class="menu" />
+
+      <div class="navbar-left">
+        <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo" />
+        <ul>
+          <li>
+            <a href="/">All</a>
+          </li>
+          <li>
+            <a href="/">Electronics</a>
+          </li>
+          <li>
+            <a href="/">Fornitures</a>
+          </li>
+          <li>
+            <a href="/">Clothes</a>
+          </li>
+          <li>
+            <a href="/">Others</a>
+          </li>
+        </ul>
+      </div>
+      <div class="mobile-menu inactive">
+        <ul>
+          <li>
+            <a href="/">CATEGORIES</a>
+          </li>
+          <li>
+            <a href="/">All</a>
+          </li>
+          <li>
+            <a href="/">Electronics</a>
+          </li>
+          <li>
+            <a href="/">Fornitures</a>
+          </li>
+          <li>
+            <a href="/">Others</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/">My orders</a>
+          </li>
+          <li>
+            <a href="/">My acount</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/" class="email">juan@gmail.com</a>
+          </li>
+          <li>
+            <a href="/" class="sign-out">Sign out</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-right">
+        <ul>
+          <li class="navbar-email">juan@example.com</li>
+          <li class="navbar-shopping-cart">
+            <img src="./icons/icon_shopping_cart.svg" alt="shopping cart" />
+            <div>2</div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="desktop-menu inactive">
+      <ul>
+        <li>
+          <a href="/" class="tittle">My orders</a>
+        </li>
+        <li>
+          <a href="/">My account</a>
+        </li>
+        <li>
+          <a href="/">Sign out</a>
+        </li>
+      </ul>
+    </div>
+
+
+
+
+    <aside  id="shoppingCartContainer" class="inactive">
+        <div class="title-container">
+            <img src="./icons/flechita.svg" alt="arrow" >
+            <p class="title">My order</p> 
+
+        </div>
+        
+        <div class="my-order-content">
+
+            <div class="shopping-cart">
+                <figure>
+                    <img src="https://images.pexels.com/photos/2393821/pexels-photo-2393821.jpeg?cs=srgb&dl=pexels-nishant-aneja-2393821.jpg&fm=jpg"
+                    alt="bike">
+                </figure>
+                <p>bike</p>
+                <p>$60.00</p>
+                <img src="./icons/icon_close.png" alt="close">
+                     
+            </div>
+            <div class="shopping-cart">
+                <figure>
+                    <img src="https://images.pexels.com/photos/2393821/pexels-photo-2393821.jpeg?cs=srgb&dl=pexels-nishant-aneja-2393821.jpg&fm=jpg"
+                    alt="bike">
+                </figure>
+                <p>bike</p>
+                <p>$60.00</p>
+                <img src="./icons/icon_close.png" alt="close">
+                     
+            </div>
+            <div class="shopping-cart">
+                <figure>
+                    <img src="https://images.pexels.com/photos/2393821/pexels-photo-2393821.jpeg?cs=srgb&dl=pexels-nishant-aneja-2393821.jpg&fm=jpg"
+                    alt="bike">
+                </figure>
+                <p>bike</p>
+                <p>$60.00</p>
+                <img src="./icons/icon_close.png" alt="close">
+                     
+            </div>
+            <div class="shopping-cart">
+                <figure>
+                    <img src="https://images.pexels.com/photos/2393821/pexels-photo-2393821.jpeg?cs=srgb&dl=pexels-nishant-aneja-2393821.jpg&fm=jpg"
+                    alt="bike">
+                </figure>
+                <p>bike</p>
+                <p>$60.00</p>
+                <img src="./icons/icon_close.png" alt="close">
+                     
+            </div>
+            <div class="shopping-cart">
+                <figure>
+                    <img src="https://images.pexels.com/photos/2393821/pexels-photo-2393821.jpeg?cs=srgb&dl=pexels-nishant-aneja-2393821.jpg&fm=jpg"
+                    alt="bike">
+                </figure>
+                <p>bike</p>
+                <p>$60.00</p>
+                <img src="./icons/icon_close.png" alt="close">
+                     
+            </div>
+            <div class="order-detail">
+                <p>
+                    <span>Total</span>
+                    
+                </p>
+                <p>$600.000</p>
+
+            </div>
+            <button class="primary-button">
+                Checkout
+            </button> 
+        </div>
+        
+        
+        
+    </aside>
+
+    <aside id="product-detail" class="inactive">
+      <div class="product-detail-close">
+          <img src="./icons/icon_close.png" alt="close">
+      </div>
+      
+      <img src="https://images.pexels.com/photos/2393821/pexels-photo-2393821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 " 
+              alt="bike">
+      <div class="product-info">
+          <p>$35.00</p>
+          <p>There we have an old fashioned bijke, perfect for nostalgic people</p>
+          <button class="primary-button add-to-cart-button">
+              <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
+              Add to cart
+          </button> 
+      </div>
+  </aside>
+
+
+    <section class="main-container">
+      <div class="cards-container">
+        <!-- <div class="product-card">
+            <img src="https://images.pexels.com/photos/2393821/pexels-photo-2393821.jpeg?cs=srgb&dl=pexels-nishant-aneja-2393821.jpg&fm=jpg" alt="">
+            <div class="product-info">
+                <div>
+                    <p>$600,00</p>
+                    <p>Bike</p>
+                </div>
+                
+                <figure>
+                    <img src="./icons/bt_add_to_cart.svg" alt="">
+                </figure>
+            </div>
+        </div> -->
+
+      </div>
+    </section>
+
+
+    
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
