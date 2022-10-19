@@ -8,10 +8,13 @@ const burgerButton  = $(".menu");
 const cartButton    = $(".navbar-shopping-cart");
 const cartList      = $("#shoppingCartContainer");
 const cardsContainer= $('.cards-container');
+const productContainer=$('#product-detail');
+const productDetailClose=$('.product-detail-close');
 
 menuEmail.addEventListener("click", toggleDesktopMenu);
 burgerButton.addEventListener("click", toggleMobileMenu);
 cartButton.addEventListener("click", toggleCartList);
+productDetailClose.addEventListener("click", closeProductDetail);
 
 function toggleDesktopMenu() {
     cartList.classList.add("inactive");
@@ -21,6 +24,7 @@ function toggleDesktopMenu() {
 
 function toggleMobileMenu() {
     cartList.classList.add("inactive");
+    productContainer.classList.add("inactive");
     mobileMenu.classList.toggle("inactive");
     // mobileMenu.classList.toggle("menu-slide")
     return false;
@@ -29,10 +33,22 @@ function toggleMobileMenu() {
 function toggleCartList() {
     desktopMenu.classList.add("inactive");
     mobileMenu.classList.add("inactive");
+    productContainer.classList.add("inactive");
+
     cartList.classList.toggle("inactive");
     return false;
 }
 
+function openProductDetailAsides(){
+    cartList.classList.add("inactive");
+    mobileMenu.classList.add("inactive");
+    productContainer.classList.remove("inactive");
+
+}
+
+function closeProductDetail(){
+    productContainer.classList.add("inactive");
+}
 
 const productList =[];
 
@@ -87,39 +103,43 @@ productList.push ({
     image: 'https://m.media-amazon.com/images/I/81k2Gmal+VL._AC_SL1500_.jpg'
 }); 
 
-for(product of productList){
-    const productCard = document.createElement('div');
-    productCard.classList.add('product-card');
-    
-    const productImg = document.createElement('img');
-    productImg.setAttribute('src', product.image);
+function renderProducts(arr){
+    for(product of arr){
+        const productCard = document.createElement('div');
+        productCard.classList.add('product-card');
+        
+        const productImg = document.createElement('img');
+        productImg.setAttribute('src', product.image);
+        productImg.addEventListener('click', openProductDetailAsides);
 
-    const productInfo = document.createElement('div');
-    productInfo.classList.add('product-info');
+        const productInfo = document.createElement('div');
+        productInfo.classList.add('product-info');
 
-    const productInfoDiv = document.createElement('div');
+        const productInfoDiv = document.createElement('div');
 
-    const productPrice = document.createElement('p');
-    productPrice.innerText = '$ '+ product.price;
+        const productPrice = document.createElement('p');
+        productPrice.innerText = '$ '+ product.price;
 
-    const productName = document.createElement('p');
-    productName.innerText = product.name;
+        const productName = document.createElement('p');
+        productName.innerText = product.name;
 
-    productInfoDiv.append(productPrice, productName);
+        productInfoDiv.append(productPrice, productName);
 
-    
-    const productInfoFigure = document.createElement('figure');
-    
-    const productImgCart =  document.createElement('img');
-    productImgCart.setAttribute('src', './icons/bt_add_to_cart.svg');   
+        
+        const productInfoFigure = document.createElement('figure');
+        
+        const productImgCart =  document.createElement('img');
+        productImgCart.setAttribute('src', './icons/bt_add_to_cart.svg');   
 
-    productInfoFigure.appendChild(productImgCart);
+        productInfoFigure.appendChild(productImgCart);
 
-    productInfo.append(productInfoDiv, productInfoFigure);
+        productInfo.append(productInfoDiv, productInfoFigure);
 
-    productCard.append(productImg, productInfo);
+        productCard.append(productImg, productInfo);
 
 
-    cardsContainer.appendChild(productCard);
+        cardsContainer.appendChild(productCard);
 
+    }
 }
+renderProducts(productList);

@@ -193,7 +193,7 @@ nav{
     margin-right: 14px;
 
 }
-.aside{
+aside{
     background-color: var(--white);
     width: 360px;
     
@@ -202,7 +202,7 @@ nav{
     right: 0;
 
 }
-#shoppingCartContainer{
+#shoppingCartContainer {
     padding:0 24px; 
 }
 .my-order-content{
