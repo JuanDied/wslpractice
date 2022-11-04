@@ -1,3 +1,8 @@
+
+const API = "https://api.escuelajs.co/api/v1";
+
+
+
 const $ = (selector) => document.querySelector(selector);
 
 
@@ -50,8 +55,42 @@ function closeProductDetail(){
     productContainer.classList.add("inactive");
 }
 
+async function fetchData(urlApi){
+    const response =  await fetch(urlApi);
+    const data = await response.json(); 
+
+    return data;
+}
+
 const productList =[];
 
+(async () =>{
+    try{
+        const products_list = await fetchData(`${API}/products`);
+        console.log("care monda")
+        products_list.map(product => {
+            console.log("care monda 222")
+            let product_obj = new Object(null);
+            product_obj.name = product.title;
+            product_obj.price = product.price;
+            product_obj.image = product.images[0];
+            
+
+            productList.push(product_obj);
+
+        }).slice(0, 3).join(''); 
+        console.log(productList);
+        renderProducts(productList);
+    }
+    catch(err){
+        //throw new Error("Error!!!!!");
+        //console.error('Invalid URL');
+        console.log(err);
+    }
+})();
+
+
+/*
 productList.push({
     name:'Bike',
     price: 120.00,
@@ -102,7 +141,7 @@ productList.push ({
     price: 876,
     image: 'https://m.media-amazon.com/images/I/81k2Gmal+VL._AC_SL1500_.jpg'
 }); 
-
+*/
 function renderProducts(arr){
     for(product of arr){
         const productCard = document.createElement('div');
@@ -142,4 +181,3 @@ function renderProducts(arr){
 
     }
 }
-renderProducts(productList);
